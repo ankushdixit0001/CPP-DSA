@@ -55,7 +55,7 @@ int main() {
 
     root->right=new Node(55);
     root->right->left=new Node(54);
-    root->right->right=new Node(60);
+    root->right->right=new Node(67);
     root->right->right->right=new Node(66);
 
 
