@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>C++ STL Set & Map Operations</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+
+<h2>C++ STL Set & Map Operations</h2>
+
+<table>
+    <tr>
+        <th>Operation</th>
+        <th>Set (`set<int>`)</th>
+        <th>Map (`map<int, string>`)</th>
+    </tr>
+    <tr>
+        <td>Insert</td>
+        <td>`s.insert(value);`</td>
+        <td>`m[key] = value;` or `m.insert({key, value});`</td>
+    </tr>
+    <tr>
+        <td>Erase</td>
+        <td>`s.erase(value);`</td>
+        <td>`m.erase(key);`</td>
+    </tr>
+    <tr>
+        <td>Search</td>
+        <td>`s.find(value);`</td>
+        <td>`m.find(key);`</td>
+    </tr>
+    <tr>
+        <td>Check Existence</td>
+        <td>`s.count(value);`</td>
+        <td>`m.count(key);`</td>
+    </tr>
+    <tr>
+        <td>Size</td>
+        <td>`s.size();`</td>
+        <td>`m.size();`</td>
+    </tr>
+    <tr>
+        <td>Clear</td>
+        <td>`s.clear();`</td>
+        <td>`m.clear();`</td>
+    </tr>
+    <tr>
+        <td>Lower Bound</td>
+        <td>`s.lower_bound(value);`</td>
+        <td>`m.lower_bound(key);`</td>
+    </tr>
+    <tr>
+        <td>Upper Bound</td>
+        <td>`s.upper_bound(value);`</td>
+        <td>`m.upper_bound(key);`</td>
+    </tr>
+    <tr>
+        <td>Swap</td>
+        <td>`s1.swap(s2);`</td>
+        <td>`m1.swap(m2);`</td>
+    </tr>
+    <tr>
+        <td>Traversal</td>
+        <td>
+            ```cpp
+            for(auto it = s.begin(); it != s.end(); ++it) {
+                cout << *it << " ";
+            }
+            ```
+        </td>
+        <td>
+            ```cpp
+            for(auto it = m.begin(); it != m.end(); ++it) {
+                cout << it->first << ": " << it->second << endl;
+            }
+            ```
+        </td>
+    </tr>
+    <tr>
+        <td>Access First & Last Elements (Ordered)</td>
+        <td>N/A (Only values stored)</td>
+        <td>
+            ```cpp
+            auto first = *m.begin();
+            auto last = *prev(m.end());
+            cout << "First: " << first.first << " -> " << first.second << endl;
+            cout << "Last: " << last.first << " -> " << last.second << endl;
+            ```
+        </td>
+    </tr>
+</table>
+
+<h3>Details of Operations</h3>
+<ul>
+    <li><b>Insert:</b> Adds a new element to the container. `set` ensures uniqueness, while `map` associates keys with values.</li>
+    <li><b>Erase:</b> Removes a specific element or key-value pair.</li>
+    <li><b>Search:</b> Finds an element (in `set`) or key (in `map`). Returns an iterator.</li>
+    <li><b>Check Existence:</b> Returns `1` if the value/key exists, otherwise `0`.</li>
+    <li><b>Size:</b> Returns the total number of elements in the container.</li>
+    <li><b>Clear:</b> Removes all elements, leaving an empty container.</li>
+    <li><b>Lower Bound:</b> Returns iterator to first element not less than the given value/key.</li>
+    <li><b>Upper Bound:</b> Returns iterator to first element greater than the given value/key.</li>
+    <li><b>Swap:</b> Exchanges the contents between two sets/maps.</li>
+    <li><b>Traversal:</b> Iterates through all elements, printing them.</li>
+    <li><b>Access First & Last Elements:</b> Retrieves the first and last key-value pair from an ordered map.</li>
+</ul>
+
+</body>
+</html>
