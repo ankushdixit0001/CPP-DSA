@@ -5,20 +5,16 @@ using namespace std;
 
 class graph{
     public:
-    unordered_map<int,list<int>>adj;
+    unordered_map<int,list<int>> adj;
 
-    void addEdge(int u,int v,bool direction){
-        // direction=0-> undirected
-        //direction=1->directed
-
-        //creating an edge from u & v
-        adj[u].push_back(v);
+    void push(int u,int v, int direction){
+        adj[u].push_back(v);//u =node1,   v=node2
         if(direction==0){
             adj[v].push_back(u);
         }
     }
-    
-    void printAdjList(){
+
+    void printGraph(){
         for(auto i:adj){
             cout<<i.first<<"->";
             for(auto j:i.second){
@@ -29,23 +25,14 @@ class graph{
     }
 };
 
-int main() {
-    int n;
-    cout<<"Enter number of nodes"<<endl;
-    cin>>n;
-
-    int m;
-    cout<<"Enter number of edge"<<endl;
-    cin>>m;
-
+int main(){
     graph g;
-    for(int i=0;i<m;i++){
-        int u,v;
-        cin>>u>>v;
-        g.addEdge(u,v,0);
-    }
+    g.push(1,2,0);
+    g.push(1,3,0);
+    g.push(4,2,0);
+    g.push(5,2,0);
+    g.push(3,5,0);
 
-    //print list
-    g.printAdjList();
+    g.printGraph();
     return 0;
 }
